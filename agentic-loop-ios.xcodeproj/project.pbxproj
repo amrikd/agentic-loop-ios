@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAAAAAAAAAAAAAAAAAAABB40 /* agentic_loop_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB20 /* agentic_loop_iosApp.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB21 /* ContentView.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB42 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB22 /* DesignTokens.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB43 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB23 /* Environment.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB44 /* PulseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB24 /* PulseModels.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB45 /* PulseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB25 /* PulseAPIClient.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB46 /* SubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB26 /* SubmitView.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB47 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB27 /* DashboardView.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB48 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB28 /* PreviewData.swift */; };
+		AAAAAAAAAAAAAAAAAAAABB49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB29 /* Assets.xcassets */; };
+		AAAAAAAAAAAAAAAAAAAABB50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAABB30 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AAAAAAAAAAAAAAAAAAAABB20 /* agentic_loop_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agentic_loop_iosApp.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB21 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB22 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB23 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB24 /* PulseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseModels.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB25 /* PulseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAPIClient.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB26 /* SubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitView.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB27 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB28 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AAAAAAAAAAAAAAAAAAAABB31 /* agentic-loop-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "agentic-loop-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAAAAAAAAAAAAAAAAAAABB02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAAAAAAAAAAAAAAAAAAABB10 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB11 /* agentic-loop-ios */,
+				AAAAAAAAAAAAAAAAAAAABB19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB11 /* agentic-loop-ios */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB20 /* agentic_loop_iosApp.swift */,
+				AAAAAAAAAAAAAAAAAAAABB21 /* ContentView.swift */,
+				AAAAAAAAAAAAAAAAAAAABB12 /* Config */,
+				AAAAAAAAAAAAAAAAAAAABB13 /* Models */,
+				AAAAAAAAAAAAAAAAAAAABB14 /* Services */,
+				AAAAAAAAAAAAAAAAAAAABB15 /* Views */,
+				AAAAAAAAAAAAAAAAAAAABB18 /* Preview Content */,
+				AAAAAAAAAAAAAAAAAAAABB29 /* Assets.xcassets */,
+			);
+			path = "agentic-loop-ios";
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB12 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB22 /* DesignTokens.swift */,
+				AAAAAAAAAAAAAAAAAAAABB23 /* Environment.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB24 /* PulseModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB14 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB25 /* PulseAPIClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB16 /* Submit */,
+				AAAAAAAAAAAAAAAAAAAABB17 /* Dashboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB16 /* Submit */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB26 /* SubmitView.swift */,
+			);
+			path = Submit;
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB17 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB27 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB18 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB28 /* PreviewData.swift */,
+				AAAAAAAAAAAAAAAAAAAABB30 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AAAAAAAAAAAAAAAAAAAABB19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAAAAAAAAAAAAAAAABB31 /* agentic-loop-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA5555555555555555555555 /* agentic-loop-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6666666666666666666666 /* Build configuration list for PBXNativeTarget "agentic-loop-ios" */;
+			buildPhases = (
+				AAAAAAAAAAAAAAAAAAAABB02 /* Frameworks */,
+				AA9999999999999999999999 /* Sources */,
+				AAAAAAAAAAAAAAAAAAAABB01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "agentic-loop-ios";
+			productName = "agentic-loop-ios";
+			productReference = AAAAAAAAAAAAAAAAAAAABB31 /* agentic-loop-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA1111111111111111111111 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AA5555555555555555555555 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = AA2222222222222222222222 /* Build configuration list for PBXProject "agentic-loop-ios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAAAAAAAAAAAAAAAAAAABB10;
+			productRefGroup = AAAAAAAAAAAAAAAAAAAABB19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA5555555555555555555555 /* agentic-loop-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAAAAAAAAAAAAAAAAAAABB01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAAAAAAAAAAAAAAAAAAABB49 /* Assets.xcassets in Resources */,
+				AAAAAAAAAAAAAAAAAAAABB50 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA9999999999999999999999 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAAAAAAAAAAAAAAAAAAABB40 /* agentic_loop_iosApp.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB41 /* ContentView.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB42 /* DesignTokens.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB43 /* Environment.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB44 /* PulseModels.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB45 /* PulseAPIClient.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB46 /* SubmitView.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB47 /* DashboardView.swift in Sources */,
+				AAAAAAAAAAAAAAAAAAAABB48 /* PreviewData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA3333333333333333333333 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA4444444444444444444444 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA7777777777777777777777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"agentic-loop-ios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agenticloop.ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA8888888888888888888888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"agentic-loop-ios/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.agenticloop.ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA2222222222222222222222 /* Build configuration list for PBXProject "agentic-loop-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA3333333333333333333333 /* Debug */,
+				AA4444444444444444444444 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6666666666666666666666 /* Build configuration list for PBXNativeTarget "agentic-loop-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7777777777777777777777 /* Debug */,
+				AA8888888888888888888888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA1111111111111111111111 /* Project object */;
+}

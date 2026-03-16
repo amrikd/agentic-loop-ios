@@ -6,55 +6,50 @@ enum PreviewData {
 
     // MARK: MoodSubmitResponse
     static let submitResponse = MoodSubmitResponse(
-        success: true,
-        submissionID: "preview-sub-001",
-        message: "Preview submission successful."
+        id: 1,
+        createdAt: "2026-03-09T12:00:00Z",
+        mood: 4,
+        hasComment: true
     )
 
-    // MARK: PulseResult
-    static let pulseResult = PulseResult(
-        id: "preview-result-001",
-        teamID: "team-preview",
-        averageScore: 4.1,
-        totalVotes: 8,
-        period: "2025-W10",
-        breakdown: [1: 0, 2: 1, 3: 1, 4: 4, 5: 2]
-    )
-
+    // MARK: ResultsResponse
     static let resultsResponse = ResultsResponse(
-        teamID: "team-preview",
-        results: [pulseResult]
+        teamID: "dev-01",
+        totalSubmissions: 42,
+        averageMood: 3.8,
+        distribution: ["1": 2, "2": 5, "3": 10, "4": 15, "5": 10],
+        lastUpdated: "2026-03-09T12:00:00Z"
     )
 
     // MARK: HistoryEntry
     static let historyEntries: [HistoryEntry] = [
-        HistoryEntry(id: "preview-h-001", score: 5, comment: "Shipped the big feature!", submittedAt: Date(), period: "2025-W10"),
-        HistoryEntry(id: "preview-h-002", score: 4, comment: "Good sprint.", submittedAt: Date().addingTimeInterval(-604800), period: "2025-W09"),
-        HistoryEntry(id: "preview-h-003", score: 2, comment: "Heavy on-call week.", submittedAt: Date().addingTimeInterval(-1209600), period: "2025-W08"),
-        HistoryEntry(id: "preview-h-004", score: 3, comment: nil, submittedAt: Date().addingTimeInterval(-1814400), period: "2025-W07")
+        HistoryEntry(id: 1, mood: 5, createdAt: "2026-03-09T09:00:00Z"),
+        HistoryEntry(id: 2, mood: 4, createdAt: "2026-03-08T15:30:00Z"),
+        HistoryEntry(id: 3, mood: 2, createdAt: "2026-03-07T11:00:00Z"),
+        HistoryEntry(id: 4, mood: 3, createdAt: "2026-03-06T14:00:00Z")
     ]
 
     static let historyResponse = HistoryResponse(
-        teamID: "team-preview",
-        entries: historyEntries
+        entries: historyEntries,
+        total: historyEntries.count
     )
 
     // MARK: MoodComment
     static let comments: [MoodComment] = [
-        MoodComment(id: "preview-c-001", text: "Great team energy this week!", score: 5, submittedAt: Date(), period: "2025-W10"),
-        MoodComment(id: "preview-c-002", text: "Too many meetings, hard to focus.", score: 2, submittedAt: Date(), period: "2025-W10"),
-        MoodComment(id: "preview-c-003", text: "Loved the retro format.", score: 4, submittedAt: Date(), period: "2025-W10")
+        MoodComment(id: 1, comment: "Great team energy this week!", mood: 5, createdAt: "2026-03-09T09:00:00Z"),
+        MoodComment(id: 2, comment: "Too many meetings, hard to focus.", mood: 2, createdAt: "2026-03-08T16:00:00Z"),
+        MoodComment(id: 3, comment: "Loved the retro format.", mood: 4, createdAt: "2026-03-07T17:00:00Z")
     ]
 
     static let commentsResponse = CommentsResponse(
-        teamID: "team-preview",
-        comments: comments
+        comments: comments,
+        total: comments.count
     )
 
     // MARK: HealthCheckResponse
     static let healthOK = HealthCheckResponse(
         status: "ok",
-        version: "1.0.0-preview",
-        uptime: 86_400
+        timestamp: "2026-03-09T12:00:00Z",
+        error: nil
     )
 }

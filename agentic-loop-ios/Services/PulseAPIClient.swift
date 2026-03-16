@@ -38,21 +38,19 @@ final class PulseAPIClient {
         baseURL = AppEnvironment.apiBaseURL
         teamID  = AppEnvironment.teamID
         session = URLSession.shared
-
         decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
     }
 
     // MARK: - Public API
 
     /// Submit a mood score (1–5) with an optional comment.
-    func submitMood(score: Int, comment: String? = nil, userID: String? = nil) async throws -> MoodSubmitResponse {
+    func submitMood(mood: Int, comment: String? = nil) async throws -> MoodSubmitResponse {
         if AppEnvironment.useMock {
             return MockData.submitResponse
         }
 
-        let body = MoodSubmitRequest(teamID: teamID, score: score, comment: comment, userID: userID)
-        return try await post(path: "/mood/submit", body: body)
+        let body = MoodSubmitRequest(teamID: teamID, mood: mood, comment: comment)
+        return try await post(path: "/pulse", body: body)
     }
 
     /// Fetch the latest aggregated pulse results for the team.
@@ -61,32 +59,33 @@ final class PulseAPIClient {
             return MockData.resultsResponse
         }
 
-        return try await get(path: "/results", queryItems: [URLQueryItem(name: "team_id", value: teamID)])
+        return try await get(path: "/pulse/results", queryItems: [URLQueryItem(name: "team_id", value: teamID)])
     }
 
-    /// Fetch the submission history for the team.
-    func getHistory(limit: Int = 20, offset: Int = 0) async throws -> HistoryResponse {
+    /// Fetch the mood history for the team.
+    func getHistory(limit: Int = 20) async throws -> HistoryResponse {
         if AppEnvironment.useMock {
             return MockData.historyResponse
         }
 
         let items = [
             URLQueryItem(name: "team_id", value: teamID),
-            URLQueryItem(name: "limit",   value: "\(limit)"),
-            URLQueryItem(name: "offset",  value: "\(offset)")
+            URLQueryItem(name: "limit",   value: "\(limit)")
         ]
-        return try await get(path: "/history", queryItems: items)
+        return try await get(path: "/pulse/history", queryItems: items)
     }
 
     /// Fetch anonymised comments for the team.
-    func getComments(period: String? = nil) async throws -> CommentsResponse {
+    func getComments(limit: Int = 20) async throws -> CommentsResponse {
         if AppEnvironment.useMock {
             return MockData.commentsResponse
         }
 
-        var items = [URLQueryItem(name: "team_id", value: teamID)]
-        if let period { items.append(URLQueryItem(name: "period", value: period)) }
-        return try await get(path: "/comments", queryItems: items)
+        let items = [
+            URLQueryItem(name: "team_id", value: teamID),
+            URLQueryItem(name: "limit",   value: "\(limit)")
+        ]
+        return try await get(path: "/pulse/comments", queryItems: items)
     }
 
     /// Ping the API to confirm it is reachable.
@@ -159,46 +158,41 @@ final class PulseAPIClient {
 private enum MockData {
 
     static let submitResponse = MoodSubmitResponse(
-        success: true,
-        submissionID: "mock-submission-001",
-        message: "Mood submitted successfully (mock)."
+        id: 1,
+        createdAt: "2026-03-09T12:00:00Z",
+        mood: 4,
+        hasComment: true
     )
 
     static let resultsResponse = ResultsResponse(
         teamID: AppEnvironment.teamID,
-        results: [
-            PulseResult(
-                id: "result-001",
-                teamID: AppEnvironment.teamID,
-                averageScore: 3.8,
-                totalVotes: 12,
-                period: "2025-W10",
-                breakdown: [1: 1, 2: 2, 3: 3, 4: 4, 5: 2]
-            )
-        ]
+        totalSubmissions: 42,
+        averageMood: 3.8,
+        distribution: ["1": 2, "2": 5, "3": 10, "4": 15, "5": 10],
+        lastUpdated: "2026-03-09T12:00:00Z"
     )
 
     static let historyResponse = HistoryResponse(
-        teamID: AppEnvironment.teamID,
         entries: [
-            HistoryEntry(id: "h-001", score: 4, comment: "Good week overall.", submittedAt: Date(), period: "2025-W10"),
-            HistoryEntry(id: "h-002", score: 3, comment: nil,                  submittedAt: Date().addingTimeInterval(-604800), period: "2025-W09"),
-            HistoryEntry(id: "h-003", score: 5, comment: "Shipped big feature!", submittedAt: Date().addingTimeInterval(-1209600), period: "2025-W08")
-        ]
+            HistoryEntry(id: 1, mood: 4, createdAt: "2026-03-09T09:00:00Z"),
+            HistoryEntry(id: 2, mood: 2, createdAt: "2026-03-08T17:00:00Z"),
+            HistoryEntry(id: 3, mood: 5, createdAt: "2026-03-07T14:30:00Z")
+        ],
+        total: 3
     )
 
     static let commentsResponse = CommentsResponse(
-        teamID: AppEnvironment.teamID,
         comments: [
-            MoodComment(id: "c-001", text: "Great collaboration this week.", score: 5, submittedAt: Date(), period: "2025-W10"),
-            MoodComment(id: "c-002", text: "Feeling a bit overwhelmed with scope.", score: 2, submittedAt: Date(), period: "2025-W10"),
-            MoodComment(id: "c-003", text: "Sprint retro was productive.", score: 4, submittedAt: Date(), period: "2025-W10")
-        ]
+            MoodComment(id: 1, comment: "Great collaboration this week.", mood: 5, createdAt: "2026-03-09T09:00:00Z"),
+            MoodComment(id: 2, comment: "Feeling a bit overwhelmed with scope.", mood: 2, createdAt: "2026-03-08T17:00:00Z"),
+            MoodComment(id: 3, comment: "Sprint retro was productive.", mood: 4, createdAt: "2026-03-07T14:30:00Z")
+        ],
+        total: 3
     )
 
     static let healthResponse = HealthCheckResponse(
         status: "ok",
-        version: "1.0.0-mock",
-        uptime: 99_999
+        timestamp: "2026-03-09T12:00:00Z",
+        error: nil
     )
 }

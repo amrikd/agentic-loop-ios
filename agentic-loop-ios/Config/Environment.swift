@@ -7,8 +7,8 @@ enum AppEnvironment {
     static let useMock: Bool = false
 
     /// Base URL for the Pulse API.  No trailing slash.
-    static let apiBaseURL: String = "https://api.yourcompany.com/pulse"
+    static let apiBaseURL: String = "https://agentic-loop-api.vercel.app/api/v1"
 
     /// Team identifier sent with every request.
-    static let teamID: String = "team-123"
+    static let teamID: String = "dev-01"
 }

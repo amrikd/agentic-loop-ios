@@ -24,175 +24,55 @@ enum PulseAPIError: LocalizedError {
 
 // MARK: - PulseAPIClient
 
+/// Build this! Implement each function to call the real API using URLSession.
+///
+/// API Base URL: https://agentic-loop-api.vercel.app/api/v1
+///
+/// Endpoints:
+///   POST /pulse                        → body: { mood: 1-5, comment?, team_id }
+///   GET  /pulse/results?team_id=dev-XX → aggregated stats
+///   GET  /pulse/history?team_id=dev-XX → mood entries over time
+///   GET  /pulse/comments?team_id=dev-XX → recent anonymous comments
+///   GET  /health                       → API health check
+///
+/// Use `AppEnvironment.apiBaseURL` and `AppEnvironment.teamID` for configuration.
+/// Use `PulseAPIError` for error handling.
+/// All response types are defined in `Models/PulseModels.swift`.
 final class PulseAPIClient {
 
-    // One-line switch: flip `AppEnvironment.useMock` in Config/Environment.swift
     static let shared = PulseAPIClient()
 
-    private let baseURL: String
-    private let teamID:  String
-    private let session: URLSession
-    private let decoder: JSONDecoder
-
-    private init() {
-        baseURL = AppEnvironment.apiBaseURL
-        teamID  = AppEnvironment.teamID
-        session = URLSession.shared
-        decoder = JSONDecoder()
-    }
+    private init() {}
 
     // MARK: - Public API
 
     /// Submit a mood score (1–5) with an optional comment.
+    /// POST /pulse  →  body: { "team_id": "dev-XX", "mood": 1-5, "comment": "optional" }
     func submitMood(mood: Int, comment: String? = nil) async throws -> MoodSubmitResponse {
-        if AppEnvironment.useMock {
-            return MockData.submitResponse
-        }
-
-        let body = MoodSubmitRequest(teamID: teamID, mood: mood, comment: comment)
-        return try await post(path: "/pulse", body: body)
+        fatalError("TODO: Implement POST /pulse")
     }
 
     /// Fetch the latest aggregated pulse results for the team.
+    /// GET /pulse/results?team_id=dev-XX
     func getResults() async throws -> ResultsResponse {
-        if AppEnvironment.useMock {
-            return MockData.resultsResponse
-        }
-
-        return try await get(path: "/pulse/results", queryItems: [URLQueryItem(name: "team_id", value: teamID)])
+        fatalError("TODO: Implement GET /pulse/results")
     }
 
     /// Fetch the mood history for the team.
+    /// GET /pulse/history?team_id=dev-XX&limit=20
     func getHistory(limit: Int = 20) async throws -> HistoryResponse {
-        if AppEnvironment.useMock {
-            return MockData.historyResponse
-        }
-
-        let items = [
-            URLQueryItem(name: "team_id", value: teamID),
-            URLQueryItem(name: "limit",   value: "\(limit)")
-        ]
-        return try await get(path: "/pulse/history", queryItems: items)
+        fatalError("TODO: Implement GET /pulse/history")
     }
 
     /// Fetch anonymised comments for the team.
+    /// GET /pulse/comments?team_id=dev-XX&limit=20
     func getComments(limit: Int = 20) async throws -> CommentsResponse {
-        if AppEnvironment.useMock {
-            return MockData.commentsResponse
-        }
-
-        let items = [
-            URLQueryItem(name: "team_id", value: teamID),
-            URLQueryItem(name: "limit",   value: "\(limit)")
-        ]
-        return try await get(path: "/pulse/comments", queryItems: items)
+        fatalError("TODO: Implement GET /pulse/comments")
     }
 
     /// Ping the API to confirm it is reachable.
+    /// GET /health
     func healthCheck() async throws -> HealthCheckResponse {
-        if AppEnvironment.useMock {
-            return MockData.healthResponse
-        }
-
-        return try await get(path: "/health", queryItems: [])
+        fatalError("TODO: Implement GET /health")
     }
-
-    // MARK: - Private Helpers
-
-    private func get<T: Decodable>(path: String, queryItems: [URLQueryItem]) async throws -> T {
-        guard var components = URLComponents(string: baseURL + path) else {
-            throw PulseAPIError.invalidURL
-        }
-        if !queryItems.isEmpty { components.queryItems = queryItems }
-        guard let url = components.url else { throw PulseAPIError.invalidURL }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-
-        return try await perform(request)
-    }
-
-    private func post<B: Encodable, T: Decodable>(path: String, body: B) async throws -> T {
-        guard let url = URL(string: baseURL + path) else { throw PulseAPIError.invalidURL }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-
-        do {
-            request.httpBody = try JSONEncoder().encode(body)
-        } catch {
-            throw PulseAPIError.encodingFailed(error)
-        }
-
-        return try await perform(request)
-    }
-
-    private func perform<T: Decodable>(_ request: URLRequest) async throws -> T {
-        let data: Data
-        let response: URLResponse
-
-        do {
-            (data, response) = try await session.data(for: request)
-        } catch {
-            throw PulseAPIError.networkError(error)
-        }
-
-        if let http = response as? HTTPURLResponse, !(200...299).contains(http.statusCode) {
-            let body = String(data: data, encoding: .utf8)
-            throw PulseAPIError.httpError(statusCode: http.statusCode, body: body)
-        }
-
-        do {
-            return try decoder.decode(T.self, from: data)
-        } catch {
-            throw PulseAPIError.decodingFailed(error)
-        }
-    }
-}
-
-// MARK: - Mock Data
-
-private enum MockData {
-
-    static let submitResponse = MoodSubmitResponse(
-        id: 1,
-        createdAt: "2026-03-09T12:00:00Z",
-        mood: 4,
-        hasComment: true
-    )
-
-    static let resultsResponse = ResultsResponse(
-        teamID: AppEnvironment.teamID,
-        totalSubmissions: 42,
-        averageMood: 3.8,
-        distribution: ["1": 2, "2": 5, "3": 10, "4": 15, "5": 10],
-        lastUpdated: "2026-03-09T12:00:00Z"
-    )
-
-    static let historyResponse = HistoryResponse(
-        entries: [
-            HistoryEntry(id: 1, mood: 4, createdAt: "2026-03-09T09:00:00Z"),
-            HistoryEntry(id: 2, mood: 2, createdAt: "2026-03-08T17:00:00Z"),
-            HistoryEntry(id: 3, mood: 5, createdAt: "2026-03-07T14:30:00Z")
-        ],
-        total: 3
-    )
-
-    static let commentsResponse = CommentsResponse(
-        comments: [
-            MoodComment(id: 1, comment: "Great collaboration this week.", mood: 5, createdAt: "2026-03-09T09:00:00Z"),
-            MoodComment(id: 2, comment: "Feeling a bit overwhelmed with scope.", mood: 2, createdAt: "2026-03-08T17:00:00Z"),
-            MoodComment(id: 3, comment: "Sprint retro was productive.", mood: 4, createdAt: "2026-03-07T14:30:00Z")
-        ],
-        total: 3
-    )
-
-    static let healthResponse = HealthCheckResponse(
-        status: "ok",
-        timestamp: "2026-03-09T12:00:00Z",
-        error: nil
-    )
 }

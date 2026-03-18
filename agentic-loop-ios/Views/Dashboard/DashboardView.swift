@@ -1,6 +1,13 @@
 import SwiftUI
 
-// Build your dashboard UI here. Use PulseAPIClient.shared.getResults() / getHistory() / getComments()
+// Build your dashboard UI here.
+// What to build:
+//  - API client (implement PulseAPIClient in Services/PulseAPIClient.swift)
+//  - Average mood display
+//  - Distribution bar chart
+//  - Recent comments feed
+//  - Loading and empty states
+//  - Refresh mechanism
 struct DashboardView: View {
     var body: some View {
         ZStack {
@@ -15,7 +22,7 @@ struct DashboardView: View {
                     .font(DesignTokens.Typography.largeTitle)
                     .foregroundStyle(DesignTokens.Colors.textPrimary)
 
-                Text("Build your dashboard UI here.\nUse PulseAPIClient.shared.getResults()\ngetHistory() / getComments()")
+                Text("Build your API client and dashboard UI here.")
                     .font(DesignTokens.Typography.body)
                     .foregroundStyle(DesignTokens.Colors.textSecondary)
                     .multilineTextAlignment(.center)

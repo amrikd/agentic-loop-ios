@@ -9,7 +9,7 @@ Use Copilot Chat to design the full architecture for Team Pulse **before writing
 
 ## What to Do
 
-1. **Open your Copilot agent** → Select the **Architect** agent in VS Code
+1. **Open your Copilot agent** → Select the **Architect** agent in VS Code (use Xcode to build, VS Code for Copilot Chat)
 2. **Ask it to propose** the full component architecture for Team Pulse
 3. **Ask it to define** the API client design, state management, and data flow
 4. **Challenge it** — ask: *"What are the weaknesses? What would a senior engineer push back on?"*

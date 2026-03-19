@@ -9,7 +9,7 @@ Build a working Team Pulse app — API client, submit screen, and dashboard — 
 
 ## What to Do
 
-1. **Switch to the Builder agent** in VS Code (or use the handoff from Architect)
+1. **Switch to the Builder agent** in VS Code (in VS Code — build and run with ⌘R in Xcode) (or use the handoff from Architect)
 2. **Build in this order:**
 
 ### Step 1: API Client (10 min)

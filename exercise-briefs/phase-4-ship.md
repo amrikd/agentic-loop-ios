@@ -9,7 +9,7 @@ Make your app competition-ready. Polish the UI, write documentation, and prepare
 
 ## What to Do
 
-1. **Switch to the Shipper agent** in VS Code (or use the handoff from Reviewer)
+1. **Switch to the Shipper agent** (in VS Code) (or use the handoff from Reviewer)
 2. **Split your time:**
 
 ### Polish the UI (15 min)

@@ -9,7 +9,7 @@ Make your app bulletproof. Write tests, find edge cases, handle errors properly.
 
 ## What to Do
 
-1. **Switch to the Reviewer agent** in VS Code (or use the handoff from Builder)
+1. **Switch to the Reviewer agent** (in VS Code) (or use the handoff from Builder)
 2. **Work through this checklist:**
 
 ### Step 1: AI Code Review (10 min)

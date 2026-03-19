@@ -69,5 +69,7 @@ Check these yourself and fix any gaps:
 
 ---
 
+📌 **Git checkpoint:** `git add -A && git commit -m "Phase 3 — hardened"` — save your work before polishing.
+
 *⏱ At 25 min: "10 minutes. Prioritize your most critical fixes."*
 *✋ Checkpoint: "Who found something AI surfaced that you hadn't thought of?"*

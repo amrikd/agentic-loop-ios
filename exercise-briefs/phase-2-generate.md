@@ -67,5 +67,7 @@ Check your assignment sheet. Configure it in:
 
 ---
 
+📌 **Git checkpoint:** `git add -A && git commit -m "Phase 2 — working app"` — if things break later, you can always come back to this.
+
 *⏱ At 30 min: "5 minutes. Get end-to-end working. Polish comes later."*
 *✋ Checkpoint: "Raise your hand if you can submit a mood and see it on your dashboard."*

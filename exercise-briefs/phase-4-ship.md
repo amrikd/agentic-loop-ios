@@ -75,6 +75,8 @@ Think about:
 
 ---
 
+📌 **Git checkpoint:** `git add -A && git commit -m "Phase 4 — final"` — this is your submission.
+
 *⏱ At 20 min: "Start thinking about your group showcase."*
 *⏱ At 30 min: "5 minutes. Final commits."*
 *⏱ At 35 min: "Tools down."*

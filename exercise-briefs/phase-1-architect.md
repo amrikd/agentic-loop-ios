@@ -56,4 +56,6 @@ Try this prompt:
 
 ---
 
+📌 **Git checkpoint:** `git add -A && git commit -m "Phase 1 — architecture"`
+
 *⏱ At 20 min: "5 minutes. Finalize your architecture. You're building from it next."*

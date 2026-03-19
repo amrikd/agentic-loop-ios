@@ -1,6 +1,6 @@
 # Team Pulse
 
-An anonymous team mood and feedback tool. Submit how you're feeling, see the team's pulse in real time.
+An anonymous team mood and feedback tool. Submit how you're feeling, see the team's pulse update live.
 
 ---
 
